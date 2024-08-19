@@ -1,0 +1,31 @@
+<h1>Customer Component</h1>
+<div class="CustomerBody">
+    <ul class="customers">
+        @for (c of customers; track c.id) {
+        <li class="customer">
+            <span class="badge">{{c.id}}</span> {{c.Firstname}} {{c.Lastname}}
+            <button type="button" class="delete" title="delete customer" (click)="delete(c)">Delete</button>
+            <button>Cart</button>
+        </li>
+        }
+    </ul>
+    @if (mass.length!=0) {
+    <hr />}
+    <ul>
+        @for (m of mass; track $index) {
+        <li class="massage">
+            {{m}}
+        </li>
+        }
+    </ul>
+    <hr />
+    <form [formGroup]="bioSection">
+        <label class="newLabel" for="new-customer-firstname">Customer Firstname: </label>
+        <input [formControl]="bioSection.controls.firstName" id="new-customer-firstname"
+            style="margin-bottom: 5px;" /><br />
+        <label class="newLabel" for="new-customer-lastname">Customer Lastname: </label>
+        <input [formControl]="bioSection.controls.lastName" id="new-customer-lastname" />
+    </form>
+    <button type="button" class="add" title="add customer" (click)="add()">ADD</button>
+</div>
+<app-item [title]='title'></app-item>
