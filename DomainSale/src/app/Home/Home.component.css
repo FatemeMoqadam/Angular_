@@ -1,0 +1,12 @@
+.EmailInput{
+    padding: 30px;
+    text-align: center;
+}
+.EmailInput label{
+    font-size: 50px;
+    font-weight: bold;
+}
+.EmailInput input{
+    border-radius: 5px;
+    width: calc(20cqw);
+}
