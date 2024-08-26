@@ -1,12 +1,36 @@
 .EmailInput{
     padding: 30px;
     text-align: center;
+    align-content: center;
+    height: 50vh;
 }
+.Welcome{
+    padding: 30px;
+    text-align: center;
+    align-content: center;
+    height: 50vh;
+}
+.Welcome p{
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .EmailInput label{
     font-size: 50px;
     font-weight: bold;
+    margin-bottom: 35px;
 }
 .EmailInput input{
     border-radius: 5px;
     width: calc(20cqw);
+}
+#container {
+    background: #EEE;
+    height:400px;
+    width:400px;
+    position:relative;
+}
+#gonnaBeOnTheBottom {
+    position:absolute;
+    bottom:0;
 }

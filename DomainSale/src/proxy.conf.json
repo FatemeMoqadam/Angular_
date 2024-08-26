@@ -1,0 +1,6 @@
+{
+    "/api": {
+    "target": "https://saurav.tech",
+    "secure": false
+    }
+    }
