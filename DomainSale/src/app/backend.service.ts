@@ -1,7 +1,7 @@
 import { News, Config } from './Interface';
 import { Injectable, Type } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of ,tap} from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of, tap , catchError} from 'rxjs';
 const NEWS = [];
 
 @Injectable({ providedIn: 'root' })
@@ -10,16 +10,15 @@ export class BackendService {
   status: any = '222';
 
   NEWS: News[] = [];
-  temp :any[] = [];
+  temp: any[] = [];
 
   getNews(): Observable<News[]> {
-    this.http.get<any>("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json").subscribe(response => 
-        { if(response.status == 'ok') 
-            for(let a of response.articles)
-            {
-                this.NEWS.push(a as News);
-            }    
-    });
+    this.http
+      .get<any>('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json').subscribe(response => {
+          if (response.status == 'ok')
+            for (let a of response.articles) {
+              this.NEWS.push(a as News);}});
+    
     // this.NEWS =  [
     //     {
     //         source: {

@@ -1,7 +1,7 @@
 <div class="EmailInput" [style.display]="p1">
   <br />
   <label class="newLabel" for="input-email">Hi,Please Enter Your Email so we can get to know you🎆 </label><br />
-  <input [formControl]="email" id="input-email" style="margin-bottom: 5px;" />
+  <input [formControl]="email" id="input-email" style="margin-bottom: 5px;" (keyup.enter)="Search()" />
   <mat-icon style="font-size: 30px;
   height: fit-content; width: fit-content; position: relative; top:8px; left: 10px; "
     (click)="Search()">check_circle</mat-icon><br /><br />
@@ -13,6 +13,7 @@
     Miss.{{email.value}}👩🏻! }<br /> Welcome to Our Site!</p>
 </div>
 
-<div>
+<div class="DomainCountry">
+  
 
 </div>

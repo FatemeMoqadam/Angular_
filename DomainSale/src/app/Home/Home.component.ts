@@ -16,12 +16,11 @@ export class HomeComponent {
 
   email = new FormControl();
   p1="display";
-  Gender=false;
+  Gender=true;
   get p2() : string{
     return this.p1=='none' ? 'grid': 'none';  }
   Search():void{
-    this.http.get(`https://api.genderize.io/name=negin`).subscribe(x=>console.log('3'));
+    this.http.get<any>(`https://api.genderize.io/?name=${this.email.value}`).subscribe(response => {if(response.gender=='female') this.Gender=false;});
     this.p1 = "none";
-
   }
  }

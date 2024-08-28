@@ -33,15 +33,16 @@ Img{
 .Part3{
     width: max-content;
    align-content: center;
-   right: 0;
+   padding-left: 30px;
    text-align: right;
 }
 
 .CardBox{
-    position: absolute;
     padding-left: 27px;
     padding-right: 23px;
     padding-bottom: 50px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
     this.backendserver.getNews().subscribe(result => this.NewS=result);
   }
 
-  updateUrl(index : number) {
-    this.NewS[index].urlToImage = "https://wallpapers.com/images/featured/blank-white-7sn5o1woonmklx1h.jpg";
+  updateUrl(event : Event,index : number) {
+    this.NewS[index].urlToImage = './Not_Loading.jpg';
   }
 }
