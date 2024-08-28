@@ -1,19 +1,19 @@
 <div class="EmailInput" [style.display]="p1">
   <br />
   <label class="newLabel" for="input-email">Hi,Please Enter Your Email so we can get to know you🎆 </label><br />
-  <input [formControl]="email" id="input-email" style="margin-bottom: 5px;" (keyup.enter)="Search()" />
+  <input [formControl]="email" id="input-email" style="margin-bottom: 5px;" (keyup.enter)="Search() " />
   <mat-icon style="font-size: 30px;
-  height: fit-content; width: fit-content; position: relative; top:8px; left: 10px; "
+    height: fit-content; width: fit-content; position: relative; top:8px; left: 10px;"
     (click)="Search()">check_circle</mat-icon><br /><br />
-</div>
-<div [style.display]="p2" class="Welcome">
-  <p>Hi,@if(Gender)
-    {Mr.{{email.value}}👨🏻! }
-    @else{
-    Miss.{{email.value}}👩🏻! }<br /> Welcome to Our Site!</p>
-</div>
-
-<div class="DomainCountry">
+  </div>
+  <div [style.display]="p2" class="Welcome">
+    <p>Hi,@if(Gender)
+      {Mr.{{(email.value)!.split('@')[0]}}👨🏻! }
+      @else{
+      Miss.{{(email.value)!.split('@')[0]}}👩🏻! }<br /> Welcome to Our Site!</p>
+  </div>
   
-
-</div>
+  <div class="container-fluid DomainCountry_box">
+    499
+    oyhi98ukyy
+  </div>
