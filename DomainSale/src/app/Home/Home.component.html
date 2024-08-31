@@ -1,19 +1,39 @@
 <div class="EmailInput" [style.display]="p1">
   <br />
   <label class="newLabel" for="input-email">Hi,Please Enter Your Email so we can get to know you🎆 </label><br />
-  <input [formControl]="email" id="input-email" style="margin-bottom: 5px;" (keyup.enter)="Search() " />
+  <input [formControl]="email" id="input-email" style="margin-bottom: 10px;" (keyup.enter)="Search()"/>
   <mat-icon style="font-size: 30px;
     height: fit-content; width: fit-content; position: relative; top:8px; left: 10px;"
     (click)="Search()">check_circle</mat-icon><br /><br />
-  </div>
-  <div [style.display]="p2" class="Welcome">
-    <p>Hi,@if(Gender)
-      {Mr.{{(email.value)!.split('@')[0]}}👨🏻! }
-      @else{
-      Miss.{{(email.value)!.split('@')[0]}}👩🏻! }<br /> Welcome to Our Site!</p>
-  </div>
-  
-  <div class="container-fluid DomainCountry_box">
-    499
-    oyhi98ukyy
+</div>
+<div [style.display]="p2" class="Welcome">
+  <p>Hi,@if(Gender)
+    {Mr.{{(email.value)!.split('@')[0]}}👨🏻! }
+    @else{
+    Miss.{{(email.value)!.split('@')[0]}}👩🏻! }<br /> Welcome to Our Site!</p>
+</div>
+
+<div class="DomainCountry" >
+  <div class="DomainCountry_box">
+    <div style="width: 50%; height: fit-content; position: relative; left: 0; margin-right: 1%;
+      top: 0;">
+      <img
+        src={{CountryImg}}
+        width="90%">
+    </div>
+    <div style="width: 50%; height: fit-content; position: relative; left: 0;top: 0;">
+      <div class="row">
+        <div class="col h4"><mat-icon style="margin-right: 2%;color:  rgb(48, 50, 148);">wifi_tethering</mat-icon>IP Address:</div>
+        <div class="col h6">{{ip}}</div>
+      </div><br/>
+      <div class="row">
+        <div class="col h4"><mat-icon style="margin-right: 2%;color:  rgb(48, 50, 148);"> map</mat-icon>Country Name:</div>
+        <div class="col h6">{{Country}}</div>
+      </div><br/>
+      <div class="row">
+        <div class="col h4"><mat-icon style="margin-right: 2%;color:  rgb(48, 50, 148);"> add_location</mat-icon>Country Code:</div>
+        <div class="col h6">{{CountryCode}}</div>
+      </div>
+    </div>
+
   </div>

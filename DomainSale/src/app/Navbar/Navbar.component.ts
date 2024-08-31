@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { response } from 'express';
 
 @Component({
   selector: 'app-navbar',
@@ -12,14 +13,11 @@ import { RouterModule } from '@angular/router';
 export class NavbarComponent {
   constructor(private http: HttpClient) {}
 
-  search(input: string): void {
-    this.http.get('https://api.genderize.io/?name=negin');
+  search(): void {
+    this.http.get('https://reqres.in/api/users?page=2').subscribe(response=>console.log(response));
   }
   title = 'Domain Sale';
 
-  // get color() : string{
-  //   return this.bool ? 'blue' : 'green';
-  // }
   bool: boolean = false;
   Toggle(): void {
     this.bool = !this.bool;

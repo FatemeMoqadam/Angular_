@@ -1,0 +1,6 @@
+{
+    "/api/*": {
+        "target": "https://ip-api.com",
+        "secure": false
+    }
+}

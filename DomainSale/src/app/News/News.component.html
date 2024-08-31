@@ -1,4 +1,5 @@
 <h1>TODAY's News</h1>
+@if(NewS.length!=0){
 <div class="CardBox">
     @for (news_ of NewS; track $index) {
     <div class="NewsCard">
@@ -18,8 +19,8 @@
     </div>
 
     }
-</div>
-@if(NewS.length==0) {
+</div>}
+@else {
 <p style="width: 100%; height: 75vh; font-size: 50px;
 text-align: center; align-content: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">No
     News☹️</p>

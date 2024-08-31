@@ -1,39 +1,43 @@
 .EmailInput{
-    padding: 30px;
-    text-align: center;
+    padding: 50px;
+    justify-content: center;
     align-content: center;
-    height: 50vh;
+    text-align: center;
+    height: 30vh;
+}
+.EmailInput label{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.EmailInput input{
+    border-radius: 5px;
+    width: calc(30cqw);
+    justify-self: center;
 }
 .Welcome{
     padding: 20px;
     text-align: center;
     align-content: center;
-    height: 40vh;
+    height: 30vh;
 }
 .Welcome p{
     font-size: 50px;
     font-weight: bold;
 }
 
-.EmailInput label{
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 35px;
-}
-.EmailInput input{
-    border-radius: 5px;
-    width: calc(30cqw);
-}
-
 .DomainCountry{
-    height: 60vh;
-    width: 80vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 .DomainCountry_box{
-    background-color: bisque;
-    padding: 50px;
-    align-content: center;
+    position: absolute;
+    display: flex;
+    height: 50vh;
+    padding: 30px;
+    width:calc(65cqw);
+    background-color: rgb(230, 230, 230);
+    border-radius: 15px;
+    align-items: center;
 }
