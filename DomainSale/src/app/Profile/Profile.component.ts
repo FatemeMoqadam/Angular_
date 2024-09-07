@@ -3,31 +3,42 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
-
 @Component({
   selector: 'app-profiler',
   standalone: true,
-  imports: [RouterModule,ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './Profile.component.html',
   styleUrl: './Profile.component.css',
 })
 export class ProfileComponent {
-  login:boolean = true ;
-  log_sign:boolean = false ;
-  email = new FormControl<string>("");
-  password = new FormControl<string>("");
+  login: boolean = true;
+  log_sign: boolean = false;
+  email = new FormControl<string>('');
+  password = new FormControl<string>('');
   constructor(private http: HttpClient) {
     // if(localStorage.getItem('token')!=null)
     //   this.login=false;
   }
 
-  Submit() : void{
-    if(this.log_sign)
-      this.http.post("https://reqres.in/api/login",{email:this.email.value , password:this.password.value}).subscribe(response=>console.log(response));
+  Submit(): void {
+    if (this.log_sign)
+      this.http
+        .post<any>('https://reqres.in/api/login', {
+          email: this.email.value,
+          password: this.password.value,
+        })
+        .subscribe((response) => {
+          localStorage.setItem('id', response.id);
+          localStorage.setItem('token', response.token);
+        });
     else
-    this.http.post("https://reqres.in/api/register",{email:this.email.value , password:this.password.value}).subscribe(response=>console.log(response));
-
+      this.http
+        .post<any>('https://reqres.in/api/register', {
+          email: this.email.value,
+          password: this.password.value,
+        })
+        .subscribe((response) => {
+          localStorage.setItem('token', response.token);
+        });
   }
-  
-  
 }

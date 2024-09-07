@@ -4,20 +4,20 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a (click)="Toggle(1)" class="nav-link align-middle px-0">
+                        <a href="#" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a (click)="Toggle(2)" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        <a (click)="Toggle(1)" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">User List</span>
                         </a>
                     </li>
-                    <li>
-                        <a (click)="Toggle(3)" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                    <li>
+                     <li>
+                        <a (click)="Toggle(2)" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline"> Resources </span></a>
+                    </li> 
+                    <!-- <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
@@ -38,12 +38,11 @@
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
+                    </li>  -->
                 </ul>
             </div>
         </div>
-        @if(index == 1)
-        {
+        @if(index==1){
         <div class="col py-3">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
             <div class="container">
@@ -71,40 +70,36 @@
                     </div>}
                 </div>
             </div>
-        </div>
-    }
-    @else if(index == 2)
-        {
-        <div class="col py-3">
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-sm-8 col-lg-6">
-                        <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <h3>All saasUsers</h3>
-                            <div class="line"></div>
+        </div>}
+        @if(index==2){
+            <div class="col py-3">
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-8 col-lg-6">
+                            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <h3>All Resources</h3>
+                                <div class="line"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    @for(user of Users; track user.id){
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="advisor_thumb"><img src={{user.avatar}} alt="">
+                    <div class="row">
+                        @for(resource of Resources; track resource.id){
+                        <div class="col-12 col-sm-6 col-lg-3" >
+                            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
+                                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <div class="advisor_thumb" [style.background-color]="resource.color" ><img alt="">
+                                </div>
+                                <div class="single_advisor_details_info" >
+                                    <h5>  {{resource.year}} </h5>
+                                    <h6> {{ resource.name }} </h6>
+                                    <!-- <p class="designation">{{ resource.pantone_value }}</p> -->
+                                </div>
                             </div>
-                            <div class="single_advisor_details_info">
-                                <h6>{{user.first_name}} {{user.last_name}}</h6>
-                                <p class="designation">{{user.email}}</p>
-                            </div>
-                        </div>
-                    </div>}
+                        </div>}
+                    </div>
                 </div>
-            </div>
-        </div>
-    }
-
-
+            </div>}
     </div>
 </div>
