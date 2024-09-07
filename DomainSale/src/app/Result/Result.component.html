@@ -1,0 +1,44 @@
+<section class="vh-90 gradient-custom">
+  <div class="container h-100" style="padding-top: 7%;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-8">
+        <div class="card  text-white" style="border-radius: 1rem; background-color: rgb(15, 16, 88);">
+          <div class="card-body p-5 text-center">
+            @if(domain.value=='-' ){
+            <i class="bi bi-hourglass-split" style="color: rgb(139, 139, 139);font-size: 560%;"></i>
+            <h1>Searshing for Domain "{{Dom}}" . . .</h1><br />
+            }
+            @else if(domain.value=='/'){
+            <i class="bi bi-cart-x-fill" style="color: red;font-size: 560%;"></i>
+            <h1>No FREE Domain Found!</h1><br />
+            <h5>Domain: {{Dom}} </h5>
+            }
+            @else{
+            <div class="row" style="margin-top: 10px;">
+              <div class="col h4">Domain:</div>
+              <div class="col h5">{{domain.value}}</div>
+            </div><br />
+            <div class="row">
+              <div class="col h4">Punycode:</div>
+              <div class="col h5">{{punycode.value}}</div>
+            </div><br />
+            <div class="row">
+              <div class="col h4">Name:</div>
+              <div class="col h5">{{name.value}}</div>
+            </div><br />
+            <div class="row">
+              <div class="col h4">Extention:</div>
+              <div class="col h5">{{extension.value}}</div>
+            </div><br />
+            <div class="row">
+              <div class="col h4">Servers Name:</div>
+              <div class="col h5"> @for (item of name_servers.value; track $index) { {{item}}<br /> }</div>
+            </div><br />
+            <button class="button-68" role="button"><span class="text">Purchase</span></button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,25 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { response } from 'express';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './Navbar.component.html',
   styleUrl: './Navbar.component.css',
 })
 export class NavbarComponent {
   constructor(private http: HttpClient) {}
 
-  search(): void {
-    this.http.get('https://reqres.in/api/users?page=2').subscribe(response=>console.log(response));
+  ngOnInit() {
+    this.domain.valueChanges.subscribe(change => {
+      this.resultURL = "domain_result/"+this.domain.value;
+    });
   }
+  domain = new FormControl<string>('');
+  resultURL = "";
   title = 'Domain Sale';
-
-  bool: boolean = false;
-  Toggle(): void {
-    this.bool = !this.bool;
-  }
 }

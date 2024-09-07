@@ -5,22 +5,22 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" style="font-size: 40px;" href="#">Domain Sale</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" style="font-size: 20px;">
-          <a class="nav-link active" aria-current="page" href="/" style="height: 120%; align-content:center">Home</a>
+          <a class="nav-link active" aria-current="page" href="/profile" style="height: 100%; align-content:center"><i class="bi bi-person h3"  style="color:rgb(160, 160, 248);" ></i></a>
         </li>
         <li class="nav-item" style="font-size: 20px;">
-          <a class="nav-link" href="/news" style="height: 120%; align-content:center">News</a>
+          <a class="nav-link" href="/news" style="height: 100%; align-content:center">News</a>
         </li>
         <li class="nav-item" style="font-size: 20px;">
-          <a class="nav-link" href="/dashboard" style="height: 120%; align-content:center">Dashboard</a>
+          <a class="nav-link" href="/dashboard" style="height: 100%; align-content:center">Dashboard</a>
         </li>
-      </ul>
+      </ul>    
+      <a class="d-flex navbar-brand" style="font-size: 40px;margin-right: 30%;margin-left: 20%;" href="#">Domain Sale</a>
       <form class="d-flex input-group w-auto">
-        <input type="search" class="form-control" placeholder="Type a Domain" aria-label="Search" #input_domain />
-        <button data-mdb-ripple-init class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" (click)="search()">
-          Search
+        <input [formControl]="domain" type="search" class="form-control" placeholder="Enter Domain" aria-label="Search" #input_domain />
+        <button data-mdb-ripple-init class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+          <a href={{resultURL}}>Search</a>
         </button>
       </form>
     </div>

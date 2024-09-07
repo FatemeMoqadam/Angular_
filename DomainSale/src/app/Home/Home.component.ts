@@ -15,7 +15,7 @@ import { ReactiveFormsModule, FormControl } from '@angular/forms';
 })
 export class HomeComponent {
   constructor(private http: HttpClient) {
-    // this.GetCountry();
+    this.GetCountry();
   }
 
   email = new FormControl<string>(' ');

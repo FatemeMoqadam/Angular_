@@ -6,7 +6,7 @@ import { User } from '../Interface';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule,],
   templateUrl: './Dashboard.component.html',
   styleUrl: './Dashboard.component.css',
 })
@@ -29,10 +29,8 @@ export class DashboardComponent {
         }
       });
   }
-  title = 'Domain Sale';
-
-  bool: boolean = false;
-  Toggle(): void {
-    this.bool = !this.bool;
+  index: number = 1;
+  Toggle(num : number): void {
+    this.index = num;
   }
 }
