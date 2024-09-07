@@ -25,10 +25,11 @@ export interface User{
     last_name: string,
     avatar: string
 }
-export interface Domain{
-    domain : string,
-    punycode:string,
-    name:string,
-    extention:string,
-    name_servers : string[],
+
+export interface Resource{
+    id:number,
+    name: string,
+    year: number,
+    color: string,
+    pantone_value: string
 }
