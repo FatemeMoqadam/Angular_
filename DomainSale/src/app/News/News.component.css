@@ -3,36 +3,53 @@ h1{
     text-align: center;
 }
 .NewsCard{
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(236, 235, 235);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    border-radius: 15px;
+    border-radius: 30px;
     padding: 20px;
     margin: 10px;
     margin-left: 30px;
     margin-right: 30px;
-    display: inline;
-    gap: 5px;
-    height: fit-content;
-    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 100%;
 }
 Img{
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 13%;
+   
+    border-radius: 15%;
+    width: 100%;
+}
+.Part1{
+    width: 35cqh; 
+    align-content: center;
 }
 
 .Part2{
     padding: 30px;
+    width: 100cqh;
+    align-content: center;
 }
 .Part3{
-    text-align: end;
+    width: max-content;
+   align-content: center;
+   padding-left: 30px;
+   text-align: right;
 }
 
 .CardBox{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 27px;
+    padding-right: 23px;
+    padding-bottom: 50px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.gonnaBeOnTheBottom{
+    position: relative;
+    bottom: 0%;
 }

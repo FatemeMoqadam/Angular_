@@ -17,3 +17,18 @@ export interface Config{
     totalResults: number,
     articles: any,
 }
+
+export interface User{
+    id:number,
+    email: string,
+    first_name: string,
+    last_name: string,
+    avatar: string
+}
+export interface Domain{
+    domain : string,
+    punycode:string,
+    name:string,
+    extention:string,
+    name_servers : string[],
+}
