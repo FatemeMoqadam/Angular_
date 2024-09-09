@@ -12,15 +12,13 @@ import { DatePipe } from '@angular/common';
   templateUrl: './News.component.html',
   styleUrl: './News.component.css'
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent{
   NewS : News[] = [];
   constructor(private backendserver : BackendService) {
-  }
-  ngOnInit(): void {
     this.backendserver.getNews().subscribe(result => this.NewS=result);
   }
 
   updateUrl(event : Event,index : number) {
-    this.NewS[index].urlToImage = './Not_Loading.jpg';
+    this.NewS[index].urlToImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEEhfFMCCkrRBjYNaoE-ATATIeQCNThAGgUg&s";
   }
 }
