@@ -1,50 +1,27 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color:  rgb(15, 16, 88);">
+        <div class="col-auto col-md-1 col-xl-2 px-sm-2 px-0" style="background-color:  rgb(15, 16, 88); width: fit-content;">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="#" class="nav-link align-middle px-0" style="font-size: larger;">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a (click)="Toggle(1)" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">User List</span>
+                        <a (click)="Toggle(1)" class="nav-link px-0 align-middle" style="font-size: larger;">
+                            <i class="bi bi-people-fill"></i> <span class="ms-1 d-none d-sm-inline">User List</span>
                         </a>
                     </li>
                      <li>
-                        <a (click)="Toggle(2)" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline"> Resources </span></a>
+                        <a (click)="Toggle(2)" class="nav-link px-0 align-middle" style="font-size: larger;">
+                            <i class="bi bi-palette"></i> <span class="ms-1 d-none d-sm-inline"> Resources </span></a>
                     </li> 
-                    <!-- <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>  -->
                 </ul>
             </div>
         </div>
         @if(index==1){
         <div class="col py-3">
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-8 col-lg-6">
@@ -73,7 +50,6 @@
         </div>}
         @if(index==2){
             <div class="col py-3">
-                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-8 col-lg-6">
@@ -94,7 +70,6 @@
                                 <div class="single_advisor_details_info resource_details_info" >
                                     <h5>  {{resource.year}} </h5>
                                     <h6> {{ resource.name }} </h6>
-                                    <!-- <p class="designation">{{ resource.pantone_value }}</p> -->
                                 </div>
                             </div>
                         </div>}

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { countriesCode, countriesCode_ } from './CountryCode';
-import * as fs from 'fs';
+import { countriesCode_ } from './CountryCode';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({

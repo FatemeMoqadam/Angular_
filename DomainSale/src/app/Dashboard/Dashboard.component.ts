@@ -46,7 +46,6 @@ export class DashboardComponent {
         }
       });
   }
-  colorr = "#9B1B30";
   index: number = 1;
   Toggle(num : number): void {
     this.index = num;

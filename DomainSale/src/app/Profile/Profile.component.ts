@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterModule, Router, ActivatedRoute } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { catchError, of } from 'rxjs';
 
@@ -13,20 +13,20 @@ import { catchError, of } from 'rxjs';
 })
 export class ProfileComponent {
   login: boolean = true;
-  log_sign: boolean = false;
+  log_sign: boolean = true;
   email = new FormControl<string>('');
   password = new FormControl<string>('');
   message = new FormControl<string>('');
   status: string = 'none';
+
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
   ) {}
 
-  Toggle(bool : boolean) : void{
-    this.log_sign=bool;
-    this.status="none";
+  Toggle(bool: boolean): void {
+    this.log_sign = bool;
+    this.status = 'none';
   }
   Submit(): void {
     if (this.log_sign)
@@ -37,8 +37,8 @@ export class ProfileComponent {
         })
         .pipe(
           catchError((error) => {
-          this.message.setValue(error.error.error);
-          this.status = 'grid';
+            this.message.setValue(error.error.error);
+            this.status = 'grid';
             return of([]);
           })
         )
@@ -64,5 +64,9 @@ export class ProfileComponent {
           localStorage.setItem('token', response.token);
           if (this.status == 'none') this.router.navigate([`/`]);
         });
+    this.http.get<any>(
+      `https://reqres.in/api/users/${localStorage.getItem('id')}`,
+      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
+    );
   }
 }
