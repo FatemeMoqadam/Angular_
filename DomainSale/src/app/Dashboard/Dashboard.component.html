@@ -60,7 +60,7 @@
                     <div class="col-12 col-sm-6 col-lg-3" >
                         <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
                             style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="advisor_thumb"><img src={{user.avatar}} alt="">
+                            <div class="advisor_thumb" ><img src={{user.avatar}} alt="">
                             </div>
                             <div class="single_advisor_details_info">
                                 <h6>{{user.first_name}} {{user.last_name}}</h6>
@@ -89,9 +89,9 @@
                         <div class="col-12 col-sm-6 col-lg-3" >
                             <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
                                 style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                <div class="advisor_thumb" [style.background-color]="resource.color" ><img alt="">
+                                <div class="advisor_thumb resource" [style.background-color]="resource.color" style="height: 90px;" >
                                 </div>
-                                <div class="single_advisor_details_info" >
+                                <div class="single_advisor_details_info resource_details_info" >
                                     <h5>  {{resource.year}} </h5>
                                     <h6> {{ resource.name }} </h6>
                                     <!-- <p class="designation">{{ resource.pantone_value }}</p> -->

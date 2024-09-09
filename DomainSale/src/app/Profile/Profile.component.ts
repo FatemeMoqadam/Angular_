@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-profiler',
@@ -15,11 +16,18 @@ export class ProfileComponent {
   log_sign: boolean = false;
   email = new FormControl<string>('');
   password = new FormControl<string>('');
-  constructor(private http: HttpClient) {
-    // if(localStorage.getItem('token')!=null)
-    //   this.login=false;
-  }
+  message = new FormControl<string>('');
+  status: string = 'none';
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
+  Toggle(bool : boolean) : void{
+    this.log_sign=bool;
+    this.status="none";
+  }
   Submit(): void {
     if (this.log_sign)
       this.http
@@ -27,9 +35,16 @@ export class ProfileComponent {
           email: this.email.value,
           password: this.password.value,
         })
+        .pipe(
+          catchError((error) => {
+          this.message.setValue(error.error.error);
+          this.status = 'grid';
+            return of([]);
+          })
+        )
         .subscribe((response) => {
-          localStorage.setItem('id', response.id);
           localStorage.setItem('token', response.token);
+          if (this.status == 'none') this.router.navigate([`/`]);
         });
     else
       this.http
@@ -37,8 +52,17 @@ export class ProfileComponent {
           email: this.email.value,
           password: this.password.value,
         })
-        .subscribe((response) => {
+        .pipe(
+          catchError((error) => {
+            this.status = 'grid';
+            this.message.setValue(error.error.error);
+            return of([]);
+          })
+        )
+        .subscribe((response) => { 
+          localStorage.setItem('id', response.id);
           localStorage.setItem('token', response.token);
+          if (this.status == 'none') this.router.navigate([`/`]);
         });
   }
 }

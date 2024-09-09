@@ -20,13 +20,17 @@
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 "
                                 style="margin-top: 10%;" type="submit"
                                 (click)="Submit()">@if(log_sign){Login}@else{SignUp}</button>
+                            <div style="margin-top: 4%; color: rgb(243, 67, 67);" [style.display]="status">
+                                <p><i class="bi bi-exclamation-triangle"></i> {{message.value}} !</p>
+                            </div>
                         </div>
+
                         <div>
                             @if(log_sign){<p class="mb-0">Don't have an account? <a class="text-white-50 fw-bold"
-                                    (click)="this.log_sign=false" style="cursor: pointer;">Sign
+                                    (click)="Toggle(false)" style="cursor: pointer;">Sign
                                     Up</a>
                             </p>}@else{<p class="mb-0">Have an account? <a class="text-white-50 fw-bold"
-                                    (click)="this.log_sign=true" style="cursor: pointer;">LogIn
+                                    (click)="Toggle(true)" style="cursor: pointer;">LogIn
                                 </a>
                             </p>}
 

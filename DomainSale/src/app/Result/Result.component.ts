@@ -28,7 +28,6 @@ export class ResultComponent {
       .get<any>(`https://who-dat.as93.net/${domain}`)
       .pipe(
         tap((x) => {
-            console.log(x);
             this.domain.setValue(x.domain.domain);
             this.punycode.setValue(x.domain.punycode);
             this.name.setValue(x.domain.name);

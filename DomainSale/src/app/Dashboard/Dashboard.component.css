@@ -20,6 +20,7 @@ body{margin-top:20px;
         background-color: #a5a7f5;
         overflow: hidden;
     }
+
     .single_advisor_profile .advisor_thumb::after {
         -webkit-transition-duration: 500ms;
         transition-duration: 500ms;
@@ -76,18 +77,23 @@ body{margin-top:20px;
         z-index: 1;
         width: 50px;
         height: 3px;
-        background-color: #a5a7f5;
+        background-color: #000000;
         content: "";
         top: 12px;
         right: 30px;
     }
-    .single_advisor_profile .single_advisor_details_info h6 {
+    .single_advisor_profile:hover .single_advisor_details_info::after {
+        background-color: #ffffff;
+    }
+    .single_advisor_profile .single_advisor_details_info h6,
+    .single_advisor_profile .single_advisor_details_info h5 {
         margin-bottom: 0.25rem;
         -webkit-transition-duration: 500ms;
         transition-duration: 500ms;
     }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .single_advisor_profile .single_advisor_details_info h6 {
+        .single_advisor_profile .single_advisor_details_info h6,
+        .single_advisor_profile .single_advisor_details_info h5 {
             font-size: 14px;
         }
     }
@@ -106,6 +112,10 @@ body{margin-top:20px;
     .single_advisor_profile:focus .advisor_thumb::after {
         background-color: #070a57;
     }
+    .single_advisor_profile:hover .resource::after,
+    .single_advisor_profile:focus .resource::after {
+        background-color: #818181;
+    }
     .single_advisor_profile:hover .advisor_thumb .social-info a,
     .single_advisor_profile:focus .advisor_thumb .social-info a {
         color: #ffffff;
@@ -120,12 +130,18 @@ body{margin-top:20px;
     .single_advisor_profile:focus .single_advisor_details_info {
         background-color: #070a57;
     }
+    .single_advisor_profile:hover .resource_details_info,
+    .single_advisor_profile:focus .resource_details_info {
+        background-color: #818181;
+    }
     .single_advisor_profile:hover .single_advisor_details_info::after,
     .single_advisor_profile:focus .single_advisor_details_info::after {
         background-color: #ffffff;
     }
     .single_advisor_profile:hover .single_advisor_details_info h6,
-    .single_advisor_profile:focus .single_advisor_details_info h6 {
+    .single_advisor_profile:focus .single_advisor_details_info h6,
+    .single_advisor_profile:hover .single_advisor_details_info h5,
+    .single_advisor_profile:focus .single_advisor_details_info h5 {
         color: #ffffff;
     }
     .single_advisor_profile:hover .single_advisor_details_info p,
