@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormControl, FormArray } from '@angular/forms';
-import { throwError, catchError, tap , of} from 'rxjs';
+import { catchError, tap , of} from 'rxjs';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class ResultComponent {
   punycode = new FormControl<string>('');
   name = new FormControl<string>('');
   extension = new FormControl<string>('');
-  name_servers = new FormArray([new FormControl<string>('')]);
+  name_servers = new FormArray([]);
 
   Dom: string="";
 

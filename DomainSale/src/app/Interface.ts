@@ -12,12 +12,6 @@ export interface News{
     content:string
 }
 
-export interface Config{
-    status : string,
-    totalResults: number,
-    articles: any,
-}
-
 export interface User{
     id:number,
     email: string,

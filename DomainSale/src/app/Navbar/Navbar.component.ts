@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-navbar',
